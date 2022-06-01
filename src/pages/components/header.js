@@ -1,7 +1,14 @@
 import React from 'react';
 import './styles/Header.css';
+import {
+    useNavigate,
+    Navigate,
+    useParams,
+    useLocation,
+  } from "react-router-dom";
 
 function Header() {
+    const navigate = useNavigate();
     return (
         <div className="jumbotron">
         <h1>Daniel Nelson Professional Portfolio Website</h1>
@@ -10,7 +17,7 @@ function Header() {
                 <li className="nav-item">
                 <a
                     href="#about"
-                    onClick={() => handlePageChange('About Me')}
+                    onClick={() => navigate("/about")}
 
                     className={currentPage === 'About Me' ? 'nav-link active' : 'nav-link'}
                 >
@@ -20,7 +27,7 @@ function Header() {
                 <li className="nav-item">
                 <a
                     href="#portfolio"
-                    onClick={() => handlePageChange('Portfolio')}
+                    onClick={() => navigate("/projects")}
 
                     className={currentPage === 'Portfolio' ? 'nav-link active' : 'nav-link'}
                 >
