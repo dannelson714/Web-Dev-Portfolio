@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/Header.css';
+import '../../styles/Header.css';
 import {
     useNavigate,
     Navigate,
@@ -12,14 +12,12 @@ function Header() {
     return (
         <div className="jumbotron">
         <h1>Daniel Nelson Professional Portfolio Website</h1>
-        <div className={`container${props.fluid ? '-fluid' : ''}`}>
+        <div className='container'>
             <ul className="nav nav-tabs">
                 <li className="nav-item">
                 <a
                     href="#about"
                     onClick={() => navigate("/about")}
-
-                    className={currentPage === 'About Me' ? 'nav-link active' : 'nav-link'}
                 >
                     About Me
                 </a>
@@ -28,8 +26,6 @@ function Header() {
                 <a
                     href="#portfolio"
                     onClick={() => navigate("/projects")}
-
-                    className={currentPage === 'Portfolio' ? 'nav-link active' : 'nav-link'}
                 >
                     Portfolio
                 </a>
@@ -37,9 +33,7 @@ function Header() {
                 <li className="nav-item">
                 <a
                     href="#contact"
-                    onClick={() => handlePageChange('Contact')}
-
-                    className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}
+                    onClick={() => navigate('/contact')}
                 >
                     Contact
                 </a>
@@ -48,9 +42,8 @@ function Header() {
                 <a
                     href="#resume"
 
-                    onClick={() => handlePageChange('Resume')}
-                    className={currentPage === 'Resume' ? 'nav-link active' : 'nav-link'}
-                >
+                    onClick={() => navigate('/skills')}
+                                    >
                     Resume
                 </a>
                 </li>
