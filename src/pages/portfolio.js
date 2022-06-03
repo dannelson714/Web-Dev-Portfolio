@@ -1,21 +1,12 @@
 import React from "react";
+import "../styles/Portfolio.css"
 
-const styles = {
-    pic: {
-        
-        
-        imageRendering: "optimizeQuality",
-        width: "50 px",
-        height: "50 px",
-        objectFit: "cover",
-    }
-}
 
 export default function Portfolio(props) {
   return (
     
     <div className="container">
-        <div className="row" style = {{ display: "flex", flexWrap: "wrap",}}>
+        <div className="row" style = {{ display: "flex", flexWrap: "wrap", justifyContent: "center"}}>
             {/* <div className=""> */}
                 {/* <ul className="list-group"> */}
                 {props.projects.map(item => (
@@ -29,9 +20,10 @@ export default function Portfolio(props) {
                                 margin: "1rem",
                                 fontSize: "1.5rem",
                                 padding: "1rem .5rem",
-                                transition: "all .07s ease",
+                                transition: "all 70s ease",
                                 width: "20rem",
-                                textaAlign: "center",
+                                // textAlign: "center",
+                                justifyContent: "center",
                                 color: "white",
                                 background: "rgba(0,0,0,0.4)",
                                 textShadow: "0 0 .5rem black",
@@ -39,9 +31,13 @@ export default function Portfolio(props) {
                                 backgroundSize: "cover"
                             }}
                             >
-                                <h5 className="card-title"> {item.name}</h5>
-                                <a href={item.githubURL} className="card-text">Github Repository  |  </a>
-                                <a href={item.deployedURL} className="card-text">Deployed App</a>
+                                <span className='front-side'>
+                                    <h5 className="card-title"> {item.name}</h5>
+                                </span>
+                                <span className='back-side'>
+                                    <a href={item.githubURL} className="card-text">Github Repository  |  </a>
+                                    <a href={item.deployedURL} className="card-text">Deployed App</a>
+                                </span>
                         </div>       
                     // </li>
                 ))}

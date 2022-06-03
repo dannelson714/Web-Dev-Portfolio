@@ -1,0 +1,60 @@
+.front-side, .back-side {
+    transition: .7s;
+}
+
+.front-side {
+    z-index: 1;
+    transform: scale(0.9);
+    opacity: 1;
+}
+
+.back-side {
+    position: absolute;
+    top: 1em;
+    left: -.25em;
+    height: 2em;
+    z-index: 2;
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+.project:hover .front-side {
+    animation: firste .4s linear forwards;
+}
+
+@keyframes firste {
+    from { display: inline; opacity: 1}
+    to {display: none; opacity: 0}
+
+}
+
+.project:hover .back-side {
+    animation: secunde .4s linear forwards;
+}
+
+@keyframes secunde {
+    from { display: none; opacity: 0}
+    to {display: inline; opacity: 1}
+
+}
+
+.project:hover{
+    animation: fronte .2s linear forwards; 
+}
+
+@keyframes fronte {
+  from { transform: scale(1);}
+  to {  transform: scale(1.05);}
+}
+
+/* .project .back-side {
+    opacity: 0;
+}
+
+.project:hover .front-side {
+    opacity: 0;
+}
+
+.project:hover .back-side {
+    opacity: 1;
+} */
