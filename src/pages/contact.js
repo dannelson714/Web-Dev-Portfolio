@@ -1,5 +1,7 @@
+import { forgetCache } from '@apollo/client/cache/inmemory/reactiveVars';
 import React, { useState } from 'react';
 import { validateEmail } from '../utils/helpers';
+import emailjs from 'emailjs-com';
 
 function Contact() {
   // Create state variables for the fields in the form
@@ -8,6 +10,7 @@ function Contact() {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [status, setStatus] = useState("Submit");
 
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
@@ -40,7 +43,7 @@ function Contact() {
     }
   }
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
 
@@ -52,6 +55,27 @@ function Contact() {
     if (!name || !message) {
         setErrorMessage('Please provide your name and message');
     }
+
+    setStatus("Sending...");
+
+    let details = {
+      name: name,
+      email: email,
+      message: message,
+    };
+
+    let response = await forgetCache("http://localhost:3001/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(details),
+    })
+
+    setStatus("Submit");
+    let result = await response.json();
+
+    alert(result.status);
 
     // If everything goes according to plan, we want to clear out the input after a successful registration.
     setName('');
@@ -85,12 +109,12 @@ function Contact() {
           form="contactForm"
           name="message"
           rows="5"
-          cols="42"
+          cols="36"
           onChange={handleInputChange}
           onBlur={handleOnBlur}
           placeholder="message"
         />
-        <button form="contactForm" type="button" onClick={handleFormSubmit}>Submit</button>
+        <button form="contactForm" type="button" onClick={handleFormSubmit}>{status}</button>
       
       {errorMessage && (
         <div>

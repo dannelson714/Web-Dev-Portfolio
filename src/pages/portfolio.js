@@ -15,7 +15,7 @@ export default function Portfolio(props) {
                             className="project"
                             key={item.id}
                             style = {{
-                                border: '.1em solid black',
+                                border: '.01em solid black',
                                 borderRadius: ".5rem",
                                 margin: "1rem",
                                 fontSize: "1.5rem",
@@ -37,6 +37,7 @@ export default function Portfolio(props) {
                                 <span className='back-side'>
                                     <a href={item.githubURL} className="card-text">Github Repository  |  </a>
                                     <a href={item.deployedURL} className="card-text">Deployed App</a>
+                                    <p>Technology Used: </p>
                                 </span>
                         </div>       
                     // </li>
