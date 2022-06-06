@@ -1,7 +1,7 @@
 import { forgetCache } from '@apollo/client/cache/inmemory/reactiveVars';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { validateEmail } from '../utils/helpers';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 function Contact() {
   // Create state variables for the fields in the form
@@ -11,6 +11,9 @@ function Contact() {
   const [message, setMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [status, setStatus] = useState("Submit");
+
+  //https://www.emailjs.com/docs/examples/reactjs/
+  const form = useRef();
 
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
@@ -57,25 +60,14 @@ function Contact() {
     }
 
     setStatus("Sending...");
-
-    let details = {
-      name: name,
-      email: email,
-      message: message,
-    };
-
-    let response = await forgetCache("http://localhost:3001/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(details),
-    })
+    emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, form.current, process.env.YOUR_PUBLIC_KEY)
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
 
     setStatus("Submit");
-    let result = await response.json();
-
-    alert(result.status);
 
     // If everything goes according to plan, we want to clear out the input after a successful registration.
     setName('');
@@ -86,7 +78,7 @@ function Contact() {
   return (
     <div>
       <p>Please contact me for further information {name}</p>
-      <form className="form" id="contactForm">
+      <form ref={form} className="form" id="contactForm">
         <input
           value={email}
           name="email"
@@ -103,7 +95,6 @@ function Contact() {
           type="text"
           placeholder="name"
         />
-        </form>
         <textarea
           value={message}
           form="contactForm"
@@ -114,6 +105,8 @@ function Contact() {
           onBlur={handleOnBlur}
           placeholder="message"
         />
+        </form>
+        
         <button form="contactForm" type="button" onClick={handleFormSubmit}>{status}</button>
       
       {errorMessage && (
