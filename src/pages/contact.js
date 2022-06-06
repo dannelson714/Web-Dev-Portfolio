@@ -46,9 +46,10 @@ function Contact() {
     }
   }
 
-  const handleFormSubmit = async (e) => {
+  const sendEmail = (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
+    console.log(`${process.env.REACT_APP_YOUR_PUBLIC_KEY}`);
 
     // First we check to see if the email is not valid or if the name is empty. If so we set an error message to be displayed on the page.
     if (!validateEmail(email)) {
@@ -60,12 +61,10 @@ function Contact() {
     }
 
     setStatus("Sending...");
-    emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, form.current, process.env.YOUR_PUBLIC_KEY)
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
+    const result = emailjs.sendForm('service_pdl6ucm', 'template_bx719d2', form.current, '03BcNqaRuqe1AOKTF')
+    if (result) {
+      console.log(result.text);
+    }  
 
     setStatus("Submit");
 
@@ -78,7 +77,7 @@ function Contact() {
   return (
     <div>
       <p>Please contact me for further information {name}</p>
-      <form ref={form} className="form" id="contactForm">
+      <form ref={form} onSubmit={sendEmail} className="form" id="contactForm">
         <input
           value={email}
           name="email"
@@ -105,10 +104,9 @@ function Contact() {
           onBlur={handleOnBlur}
           placeholder="message"
         />
+        <input type="submit" value="Send" />
         </form>
-        
-        <button form="contactForm" type="button" onClick={handleFormSubmit}>{status}</button>
-      
+              
       {errorMessage && (
         <div>
           <p className="error-text">{errorMessage}</p>
