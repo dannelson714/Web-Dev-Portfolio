@@ -40,6 +40,8 @@ function Footer() {
       >
         <p className="text-dark">© 2022 Copyright: Daniel Nelson</p>
       </div>
+
+
     </footer>
   );
 }

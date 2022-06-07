@@ -20,7 +20,7 @@ export default function Portfolio(props) {
                                 margin: "1rem",
                                 fontSize: "1.5rem",
                                 padding: "1rem .5rem",
-                                transition: "all 70s ease",
+                                // transition: "all 70s ease",
                                 width: "20rem",
                                 // textAlign: "center",
                                 justifyContent: "center",

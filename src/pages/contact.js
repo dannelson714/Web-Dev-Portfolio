@@ -49,7 +49,6 @@ function Contact() {
   const sendEmail = (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
-    console.log(`${process.env.REACT_APP_YOUR_PUBLIC_KEY}`);
 
     // First we check to see if the email is not valid or if the name is empty. If so we set an error message to be displayed on the page.
     if (!validateEmail(email)) {

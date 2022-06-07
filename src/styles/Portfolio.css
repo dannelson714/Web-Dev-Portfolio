@@ -1,3 +1,5 @@
+
+
 a:link {
     text-decoration: none;
     color: white
@@ -16,7 +18,49 @@ a:active {
     text-decoration: none;
 }
 
-.front-side, .back-side {
+.project {
+    transition: .4s;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.front-side {
+    z-index: 1;
+    transform: scale(0.9);
+    opacity: 1;
+    transition: .4s;
+}
+
+.project:hover .front-side {
+    opacity: 0;
+}
+
+.back-side {
+    position: absolute;
+    top: 1em;
+    left: -.25em;
+    height: 2em;
+    z-index: 2;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: .4s;
+}
+
+.project:hover .back-side {
+    display: inline;
+    opacity: 1;
+}
+
+
+/* @keyframes firste {
+    from { display: inline; opacity: 1}
+    to {display: none; opacity: 0}
+
+} */
+
+/* .front-side, .back-side {
     transition: .7s;
 }
 
@@ -29,7 +73,7 @@ a:active {
     to {  transform: scale(1);}
   }
 
-.front-side {
+.front-side:not(:hover) {
     animation: in .2s linear forwards;
     z-index: 1;
     transform: scale(0.9);
@@ -84,7 +128,7 @@ a:active {
 @keyframes fronte {
   from { transform: scale(1);}
   to {  transform: scale(1.05);}
-}
+} */
 
 /* .project .back-side {
     opacity: 0;

@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Daniel Nelson Web Develop Portfolio" />
+    <style>
+      body.preload *{
+        animation-duration: 0s !important;
+        -webkit-animation-duration: 0s !important;
+        transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;}
+    </style>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -23,7 +29,7 @@
     -->
     <title>Daniel Nelson Portfolio</title>
   </head>
-  <body>
+  <body class="preload">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -37,4 +43,8 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>setTimeout(function(){
+    document.body.className="";
+    },500);
+  </script>
 </html>
