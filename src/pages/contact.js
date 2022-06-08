@@ -2,6 +2,8 @@ import { forgetCache } from '@apollo/client/cache/inmemory/reactiveVars';
 import React, { useState, useRef } from 'react';
 import { validateEmail } from '../utils/helpers';
 import emailjs from '@emailjs/browser';
+import Header from './components/header'
+import Footer from './components/footer'
 
 function Contact() {
   // Create state variables for the fields in the form
@@ -75,42 +77,46 @@ function Contact() {
 
   return (
     <div>
-      <p>Please contact me for further information {name}</p>
-      <form ref={form} onSubmit={sendEmail} className="form" id="contactForm">
-        <input
-          value={email}
-          name="email"
-          onChange={handleInputChange}
-          onBlur={handleOnBlur}
-          type="email"
-          placeholder="email"
-        />
-        <input
-          value={name}
-          name="name"
-          onChange={handleInputChange}
-          onBlur={handleOnBlur}
-          type="text"
-          placeholder="name"
-        />
-        <textarea
-          value={message}
-          form="contactForm"
-          name="message"
-          rows="5"
-          cols="36"
-          onChange={handleInputChange}
-          onBlur={handleOnBlur}
-          placeholder="message"
-        />
-        <input type="submit" value="Send" />
-        </form>
-              
-      {errorMessage && (
-        <div>
-          <p className="error-text">{errorMessage}</p>
-        </div>
-      )}
+      <Header />
+      <div>
+        <p>Please contact me for further information {name}</p>
+        <form ref={form} onSubmit={sendEmail} className="form" id="contactForm">
+          <input
+            value={email}
+            name="email"
+            onChange={handleInputChange}
+            onBlur={handleOnBlur}
+            type="email"
+            placeholder="email"
+          />
+          <input
+            value={name}
+            name="name"
+            onChange={handleInputChange}
+            onBlur={handleOnBlur}
+            type="text"
+            placeholder="name"
+          />
+          <textarea
+            value={message}
+            form="contactForm"
+            name="message"
+            rows="5"
+            cols="36"
+            onChange={handleInputChange}
+            onBlur={handleOnBlur}
+            placeholder="message"
+          />
+          <input type="submit" value="Send" />
+          </form>
+                
+        {errorMessage && (
+          <div>
+            <p className="error-text">{errorMessage}</p>
+          </div>
+        )}
+      </div>
+      <Footer />
     </div>
   );
 }

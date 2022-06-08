@@ -19,10 +19,9 @@ export default function Portfolio(props) {
                                 borderRadius: ".5rem",
                                 margin: "1rem",
                                 fontSize: "1.5rem",
-                                padding: "1rem .5rem",
-                                // transition: "all 70s ease",
-                                width: "20rem",
-                                // textAlign: "center",
+                                padding: ".5rem .5rem",
+                                height: "6rem",
+                                width: "15rem",
                                 justifyContent: "center",
                                 color: "white",
                                 background: "rgba(0,0,0,0.4)",
@@ -45,6 +44,7 @@ export default function Portfolio(props) {
                 {/* </ul> */}
             {/* </div> */}
         </div>
+        <div style={{height: "80px", width:"100%", clear:"both"}}></div>
     </div>
     
   );

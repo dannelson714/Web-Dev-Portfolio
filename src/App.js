@@ -42,17 +42,16 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Header />
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/artistic" element={<Contact />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
-        <Footer />
       </Router>
     </ApolloProvider>
   );

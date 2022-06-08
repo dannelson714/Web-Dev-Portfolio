@@ -1,5 +1,7 @@
 import React from 'react';
 import Portfolio from './portfolio'
+import Header from './components/header'
+import Footer from './components/footer'
 
 import pandemicBlightPic from '../images/65581C0C-17DB-4BDE-ADBA-BE742076CC08_1_201_a.jpeg';
 import weatherDashboardPic from '../images/B147618C-64A7-4AEE-9F96-4AE2D2767DD7_1_201_a.jpeg';
@@ -56,8 +58,10 @@ const projects = [
 export default function Projects() {
   return (
     <div>
-      <h1>Portfolio Page</h1>
+      <Header />
+      <h2>Portfolio Page</h2>
       <Portfolio projects = { projects } />
+      <Footer />
     </div>
   );
 }

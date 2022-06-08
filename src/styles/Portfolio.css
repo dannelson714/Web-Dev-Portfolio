@@ -1,4 +1,6 @@
-
+p {
+    margin: 0;
+}
 
 a:link {
     text-decoration: none;
@@ -38,10 +40,9 @@ a:active {
 }
 
 .back-side {
-    position: absolute;
-    top: 1em;
-    left: -.25em;
-    height: 2em;
+    position: relative;
+    top: -3.5em;
+    left: 0em;
     z-index: 2;
     transform: scale(0.9);
     opacity: 0;

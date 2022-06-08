@@ -1,26 +1,42 @@
 import React from 'react';
 import '../styles/Home.css';
+import {useNavigate} from "react-router-dom"
 
 import danPic from '../../src/images/4056 (1).jpeg';
 
 export default function Home() {
- 
+  const navigate = useNavigate();
   return (
     <div className="panels">
       <div className="panel panel1">
-        <p>Let's</p>
+      <a 
+                    href="#about"
+                    onClick={() => navigate("/about")}
+                >Biography</a>
       </div>
       <div className="panel panel2">
-        <p>Take</p>
+      <a 
+                    href="#portfolio"
+                    onClick={() => navigate("/projects")}
+                >Portfolio</a>
       </div>
       <div className="panel panel3">
-        <p>It</p>
+      <a 
+                    href="#artistic"
+                    onClick={() => navigate("/artistic")}
+                >Artistic</a>
       </div>
       <div className="panel panel4">
-        <p>All</p>
+      <a 
+                    href="/skills"
+                    onClick={() => navigate("/skills")}
+                >Experience</a>
       </div>
       <div className="panel panel5">
-        <p>In</p>
+      <a 
+                    href="#contact"
+                    onClick={() => navigate("/contact")}
+                >Contact</a>
       </div>
     </div>
   );

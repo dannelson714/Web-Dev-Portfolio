@@ -14,17 +14,35 @@ function Header() {
             <h1 className='special-move'><span className="special-color"></span>Daniel Nelson</h1>
             <nav className="text-right">
             <li><a 
+                    href="#home"
+                    onClick={() => navigate("/")}
+                >Home</a>
+            </li>
+            <li><a 
                     href="#about"
                     onClick={() => navigate("/about")}
-                >About Dan</a>
+                >Biography</a>
             </li>
-                <li><a 
+            <li><a 
                     href="#portfolio"
                     onClick={() => navigate("/projects")}
-                >Recent Projects</a>
+                >Portfolio</a>
             </li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#">Resume/CV</a></li>
+            <li><a 
+                    href="#artistic"
+                    onClick={() => navigate("/artistic")}
+                >Artistic</a>
+            </li>
+            <li><a 
+                    href="/skills"
+                    onClick={() => navigate("/skills")}
+                >Experience</a>
+            </li>
+            <li><a 
+                    href="#contact"
+                    onClick={() => navigate("/contact")}
+                >Contact</a>
+            </li>
             </nav>
 
         </header>
