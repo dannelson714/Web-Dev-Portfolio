@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../styles/Header.css';
 import {
     useNavigate,
@@ -9,8 +9,18 @@ import {
 
 function Header() {
     const navigate = useNavigate();
+    const [trans, setTrans] = useState(false);
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            window.addEventListener("scroll", () =>
+              setTrans(window.pageYOffset > 50)
+            );
+          }
+        }, []);
+      
     return (
-        <header>
+        <header className={`header ${trans ? "trans" : ""}`}>
             <h1 className='special-move'><span className="special-color"></span>Daniel Nelson</h1>
             <nav className="text-right">
             <li><a 

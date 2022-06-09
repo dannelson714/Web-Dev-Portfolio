@@ -20,12 +20,12 @@ export default function Home() {
                     onClick={() => navigate("/projects")}
                 >Portfolio</a>
       </div>
-      <div className="panel panel3">
+      {/* <div className="panel panel3">
       <a 
                     href="#artistic"
                     onClick={() => navigate("/artistic")}
                 >Artistic</a>
-      </div>
+      </div> */}
       <div className="panel panel4">
       <a 
                     href="/skills"

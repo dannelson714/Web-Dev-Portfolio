@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from './components/header';
 import Footer from './components/footer';
-// import '../styles/About.css';
+import '../styles/About.css';
+import backgroundPic from '../images/IMG_1764 4.jpeg'
 
 // import danPic from '../../assets/4056 (1).jpeg';
 
@@ -9,8 +10,18 @@ export default function About() {
   return (
     <div>
       <Header />
+      <div style={{
+        height: "395px", 
+        width:"100%", 
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('${backgroundPic}')`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        // position: "relative",
+        }}>
+      </div>
       <div>
-        <h1>About Page</h1>
+        <h2>About Page</h2>
         <p>
         Developer Daniel Nelson comes to the world of full-stack coding by a circuitous path. Born and raised in Scotch Plains, New Jersey, 
         Daniel set out to pursue a STEM education at Cornell University, but ultimately found his way into music composition. After achieving 
