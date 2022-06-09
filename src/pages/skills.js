@@ -1,13 +1,23 @@
 import React from 'react';
 import Header from './components/header';
 import Footer from './components/footer';
-
+import backgroundPic from '../images/IMG_2038 3.jpeg'
 import CV from '../images/CV.pdf';
 
 export default function Skills() {
   return (
     <div>
       <Header />
+      <div style={{
+        height: "350px", 
+        width:"100%", 
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('${backgroundPic}')`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        // position: "relative",
+        }}>
+      </div>
       <h1>Please <a href={CV} style = {{color: "black",}}>view</a> my resume.</h1>
       <p>
       <ul>

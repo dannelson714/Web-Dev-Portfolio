@@ -11,7 +11,7 @@ export default function About() {
     <div>
       <Header />
       <div style={{
-        height: "395px", 
+        height: "350px", 
         width:"100%", 
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('${backgroundPic}')`,
         backgroundPosition: "center",
@@ -38,6 +38,7 @@ export default function About() {
         achievements throughout his life.
         </p>
       </div> 
+      <div style={{height: "80px", width:"100%", clear:"both"}}></div>
       <Footer />
     </div>
   );

@@ -4,6 +4,8 @@ import { validateEmail } from '../utils/helpers';
 import emailjs from '@emailjs/browser';
 import Header from './components/header'
 import Footer from './components/footer'
+import backgroundPic from '../images/IMG_1766 6.jpeg'
+
 
 function Contact() {
   // Create state variables for the fields in the form
@@ -78,6 +80,16 @@ function Contact() {
   return (
     <div>
       <Header />
+      <div style={{
+        height: "350px", 
+        width:"100%", 
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('${backgroundPic}')`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        // position: "relative",
+        }}>
+      </div>
       <div>
         <p>Please contact me for further information {name}</p>
         <form ref={form} onSubmit={sendEmail} className="form" id="contactForm">
