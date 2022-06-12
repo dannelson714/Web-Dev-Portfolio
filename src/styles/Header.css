@@ -15,7 +15,7 @@
 }
 
 .trans {
-  background-color: cornflowerblue;
+  background-color: black;
 }
 
 .nav-logo {
@@ -50,7 +50,7 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: .3s;
+  transition: .5s;
 }
 
 .nav-item {
@@ -86,7 +86,7 @@ li {
   top: -1px;
   margin: 5px auto;
   -webkit-transition: all 2s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   background-color: aliceblue;
 }
 
@@ -98,14 +98,14 @@ li {
       position: fixed;
       z-index: 90;
       left: -100%;
-      top: 3.4rem;
+      top: 2.3rem;
       bottom: 0rem;
       flex-direction: column;
       background-color: black;
       width: 100%;
-      /* border-radius: 10px; */
+      justify-content: space-around;
       text-align: center;
-      transition: 0.7s;
+      transition: 0.5s;
       box-shadow:
           0 10px 27px rgba(0, 0, 0, 0.05);
   }
@@ -115,7 +115,8 @@ li {
   }
 
   .nav-item {
-      margin: 1rem 0;
+      margin: .05rem 0;
+      top: -5px;
   }
 
   .hamburger {
@@ -126,6 +127,10 @@ li {
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
 }
+
+  .header.active {
+    background-color: black;
+  }
 
 .hamburger.active .bar:nth-child(1) {
     transform: translateY(6px) rotate(45deg);

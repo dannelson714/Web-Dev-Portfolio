@@ -27,9 +27,11 @@ function Header() {
     const hamburger = document.querySelector(".hamburger");
     hamburger.addEventListener("click", () => {
       if (!active) {
+        document.body.style.overflow = "hidden";
         setActive(true);
       }
       else {
+        document.body.style.overflow = "visible";
         setActive(false);
       }
   });
@@ -49,7 +51,7 @@ function mobileMenu() {
 }
 
   return (
-    <header className={`header ${trans ? "trans" : ""}`}>
+    <header className={`header ${trans ? "trans" : ""} ${active ? "active" : ""}`}>
         <nav className="navbar">
             <a href="#home"  className="nav-logo" onClick={() => navigate("/")}>Daniel Nelson</a>
             <ul className={`nav-menu ${active ? "active" : ""}`}>
