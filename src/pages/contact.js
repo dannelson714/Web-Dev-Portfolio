@@ -128,6 +128,7 @@ function Contact() {
           </div>
         )}
       </div>
+      <div style={{height: "80px", width:"100%", clear:"both"}}></div>
       <Footer />
     </div>
   );

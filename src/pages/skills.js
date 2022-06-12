@@ -29,6 +29,7 @@ export default function Skills() {
         <li>General Computer Science | Data Structures, Algorithms, Resource Management</li>
       </ul>
       </p>
+      <div style={{height: "80px", width:"100%", clear:"both"}}></div>
       <Footer />
     </div>
 

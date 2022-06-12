@@ -1,41 +1,22 @@
 import React from "react";
 import '../../styles/Footer.css';
 import { Github, Twitter, Linkedin } from 'react-bootstrap-icons'
+import backgroundPic from '../../images/4056 (1) 4.jpeg'
+
 
 function Footer() {
   return (
-    <footer
-      className="text-center text-white"
-    >
-          <a
-            className="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="https://twitter.com/dannelson"
-            role="button"
-            data-mdb-ripple-color="dark"
-          >
-          <Twitter />
-          </a>
-          <a
-            className="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="https://www.linkedin.com/in/daniel-nelson-24a97123/"
-            role="button"
-            data-mdb-ripple-color="dark"
-          >
-          <Linkedin />
-          </a>
-          <a
-            className="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="https://github.com/dannelson714"
-            role="button"
-            data-mdb-ripple-color="dark"
-          >
-          <Github /> 
-          </a>
-          <p className="text-dark copyright">© 2022 Copyright: Daniel Nelson</p>
-        
-      
-        
-
+    <footer>
+      <div style={{
+        height: "300px", 
+        width:"100%", 
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('${backgroundPic}')`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        // position: "relative",
+        }}>
+      </div>
     </footer>
   );
 }
