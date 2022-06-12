@@ -12,6 +12,9 @@ function Header() {
   const navigate = useNavigate();
   const [trans, setTrans] = useState(false);
 
+  //To capture the logic for whether the hamburger is clicked on
+  const [active, setActive] = useState(false);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", () =>
@@ -19,9 +22,18 @@ function Header() {
       );
     }
   }, []);
-
+//as with above logic except conditional if(false) then set trueend result setActive(true)
   useEffect(() => {
-    hamburger.addEventListener("click", mobileMenu);
+    const hamburger = document.querySelector(".hamburger");
+    hamburger.addEventListener("click", () => {
+      if (!active) {
+        setActive(true);
+      }
+      else {
+        setActive(false);
+      }
+  });
+
   }
   
   )
@@ -40,7 +52,7 @@ function mobileMenu() {
     <header className={`header ${trans ? "trans" : ""}`}>
         <nav className="navbar">
             <a href="#home"  className="nav-logo" onClick={() => navigate("/")}>Daniel Nelson</a>
-            <ul className="nav-menu">
+            <ul className={`nav-menu ${active ? "active" : ""}`}>
                 <li className="nav-item">
                   <a href="#about" onClick={() => navigate("/about")}>
                     Biography
@@ -92,7 +104,7 @@ function mobileMenu() {
                   </a>         
                 </li>
             </ul>
-            <div className="hamburger">
+            <div className={`hamburger ${active ? "active" : ""}`}>
                 <span className="bar"></span>
                 <span className="bar"></span>
                 <span className="bar"></span>

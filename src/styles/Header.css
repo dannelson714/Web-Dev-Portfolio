@@ -96,12 +96,14 @@ li {
 @media only screen and (max-width: 568px) {
   .nav-menu {
       position: fixed;
+      z-index: 90;
       left: -100%;
-      top: 5rem;
+      top: 3.4rem;
+      bottom: 0rem;
       flex-direction: column;
       background-color: black;
       width: 100%;
-      border-radius: 10px;
+      /* border-radius: 10px; */
       text-align: center;
       transition: 0.7s;
       box-shadow:
@@ -113,7 +115,7 @@ li {
   }
 
   .nav-item {
-      margin: 2.5rem 0;
+      margin: 1rem 0;
   }
 
   .hamburger {
@@ -126,11 +128,11 @@ li {
 }
 
 .hamburger.active .bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
+    transform: translateY(6px) rotate(45deg);
 }
 
 .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-2px) rotate(-45deg);
+    transform: translateY(-5px) rotate(-45deg);
 }
 
 }
