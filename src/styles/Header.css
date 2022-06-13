@@ -85,8 +85,8 @@ li {
   height: 1px;
   top: -1px;
   margin: 5px auto;
-  -webkit-transition: all 2s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: all .5s;
+  transition: all 0.5s;
   background-color: aliceblue;
 }
 
@@ -98,7 +98,7 @@ li {
       position: fixed;
       z-index: 90;
       left: -100%;
-      top: 2.3rem;
+      top: 2.4rem;
       bottom: 0rem;
       flex-direction: column;
       background-color: black;
@@ -106,8 +106,8 @@ li {
       justify-content: space-around;
       text-align: center;
       transition: 0.5s;
-      box-shadow:
-          0 10px 27px rgba(0, 0, 0, 0.05);
+      /* box-shadow:
+          0 10px 27px rgba(0, 0, 0, 0.05); */
   }
 
   .nav-menu.active {

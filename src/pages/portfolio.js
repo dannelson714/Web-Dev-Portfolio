@@ -27,7 +27,7 @@ export default function Portfolio(props) {
                                 background: "rgba(0,0,0,0.4)",
                                 textShadow: "0 0 .5rem black",
                                 backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${item.img})`,
-                                backgroundSize: "cover"
+                                backgroundSize: "cover",
                             }}
                             >
                                 <span className='front-side'>

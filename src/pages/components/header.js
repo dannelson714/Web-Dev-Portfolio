@@ -10,6 +10,8 @@ import { Github, Twitter, Linkedin } from "react-bootstrap-icons";
 
 function Header() {
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location.pathname);
   const [trans, setTrans] = useState(false);
 
   //To capture the logic for whether the hamburger is clicked on
@@ -29,11 +31,22 @@ function Header() {
       if (!active) {
         document.body.style.overflow = "hidden";
         setActive(true);
-      }
+        if(location.pathname === "/projects"){
+          const collection = document.getElementsByClassName('container');
+          console.log(collection);
+          for (let i=0; i<collection.length; i++) {
+            collection[i].style.marginTop = "500px";
+        }
+      }}
       else {
         document.body.style.overflow = "visible";
         setActive(false);
-      }
+        if(location.pathname === "/projects"){
+          const collection = document.getElementsByClassName('container');
+          console.log(collection);
+          for (let i=0; i<collection.length; i++) {
+            collection[i].style.marginTop = "0px";
+      }}}
   });
 
   }

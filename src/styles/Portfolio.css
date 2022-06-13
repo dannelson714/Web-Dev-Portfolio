@@ -1,3 +1,7 @@
+.container {
+    transition: 0s;
+}
+
 p {
     margin: 0;
 }
