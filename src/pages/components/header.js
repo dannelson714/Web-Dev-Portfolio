@@ -11,11 +11,26 @@ import { Github, Twitter, Linkedin } from "react-bootstrap-icons";
 function Header() {
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location.pathname);
+  console.log(location);
   const [trans, setTrans] = useState(false);
 
   //To capture the logic for whether the hamburger is clicked on
   const [active, setActive] = useState(false);
+
+  //To capture the logic for whether this page is the current page
+  const [current, setCurrent] = useState(false);
+
+  useEffect(() => {
+    const pageName = location.pathname;
+    const aTag = document.getElementsByTagName("a");
+    console.log(aTag);
+    console.log(pageName);
+    for (let i=1; i<aTag.length; i++) {
+      if (pageName === aTag[i].pathname) {
+        aTag[i].style.textDecoration = 'underline';
+      }
+    }
+  })
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -33,7 +48,6 @@ function Header() {
         setActive(true);
         if(location.pathname === "/projects"){
           const collection = document.getElementsByClassName('container');
-          console.log(collection);
           for (let i=0; i<collection.length; i++) {
             collection[i].style.marginTop = "500px";
         }
@@ -43,25 +57,11 @@ function Header() {
         setActive(false);
         if(location.pathname === "/projects"){
           const collection = document.getElementsByClassName('container');
-          console.log(collection);
           for (let i=0; i<collection.length; i++) {
             collection[i].style.marginTop = "0px";
       }}}
   });
-
-  }
-  
-  )
-
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
-
-
-
-function mobileMenu() {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-}
+})
 
   return (
     <header className={`header ${trans ? "trans" : ""} ${active ? "active" : ""}`}>
@@ -69,12 +69,12 @@ function mobileMenu() {
             <a href="#home"  className="nav-logo" onClick={() => navigate("/")}>Daniel Nelson</a>
             <ul className={`nav-menu ${active ? "active" : ""}`}>
                 <li className="nav-item">
-                  <a href="#about" onClick={() => navigate("/about")}>
+                  <a href="/about" onClick={() => navigate("/about")}>
                     Biography
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="#portfolio" onClick={() => navigate("/projects")}>
+                  <a href="/projects" onClick={() => navigate("/projects")}>
                     Portfolio
                   </a>
                 </li>
@@ -84,7 +84,7 @@ function mobileMenu() {
                   </a>               
                 </li>
                 <li className="nav-item">
-                  <a href="#contact" onClick={() => navigate("/contact")}>
+                  <a className={`${current ? "current" : ""}`}href="/contact" onClick={() => navigate("/contact")}>
                     Contact
                   </a>             
                 </li>
