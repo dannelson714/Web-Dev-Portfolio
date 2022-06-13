@@ -34,6 +34,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
+  transition: .5s;
 }
 
 a {
@@ -44,6 +45,7 @@ a {
 
 li {
   list-style: none;
+  transition: 0.5s;
 }
 
 .nav-menu {
@@ -93,7 +95,7 @@ li {
 
 /* Media queries */
 
-@media only screen and (max-width: 568px) {
+@media only screen and (max-width: 558px) {
   .nav-menu {
       position: fixed;
       z-index: 90;
@@ -112,6 +114,11 @@ li {
 
   .nav-menu.active {
       left: 0;
+      transition: .5s;
+  }
+
+  li.active {
+    transition: 0s;
   }
 
   .nav-item {
@@ -122,10 +129,12 @@ li {
   .hamburger {
       display: block;
       cursor: pointer;
+      transition: .5s;
   }
 
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
+    transition: .5s;
 }
 
   .header.active {
