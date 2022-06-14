@@ -3,13 +3,15 @@ import Portfolio from './portfolio'
 import Header from './components/header'
 import Footer from './components/footer'
 import backgroundPic from '../images/IMG_2056 2.jpeg'
+import "../styles/Projects.css"
+
 
 import pandemicBlightPic from '../images/65581C0C-17DB-4BDE-ADBA-BE742076CC08_1_201_a.jpeg';
 import weatherDashboardPic from '../images/B147618C-64A7-4AEE-9F96-4AE2D2767DD7_1_201_a.jpeg';
 import notetakerAppPic from '../images/56D110C2-B28A-42A3-AD9E-8807C032CB02_1_105_c.jpeg';
 import filmFanPic from '../images/filmfan.png';
-import workDayScheduler from '../images/Screen Shot 2022-03-24 at 4.23.17 PM.jpeg';
-import musicTheoryQuizPic from '../images/Screen Shot 2022-03-22 at 4.06.20 PM.jpeg';
+import workDayScheduler from '../images/Workday_Scheduler.jpeg';
+import musicTheoryQuizPic from '../images/Music_theory_quiz.jpeg';
 const projects = [
   {
       id: 1,
@@ -17,6 +19,7 @@ const projects = [
       img: pandemicBlightPic,
       githubURL: "https://github.com/dannelson714/Pandemic-Blight",
       deployedURL: "https://dwarrick91.github.io/Pandemic-Blight/",
+      tech: "HTML | CSS | Javascript | Materialize | jQuery | Chart.JS"
   },
   {
     id: 2,
@@ -24,6 +27,7 @@ const projects = [
     img: weatherDashboardPic,
     githubURL: "https://github.com/dannelson714/Weather-Dashboard",
     deployedURL: "https://dannelson714.github.io/Weather-Dashboard",
+    tech: "HTML | CSS | Javascript | Bootstrap | jQuery | Popper.js | Moment.js"
 },
 {
   id: 3,
@@ -31,6 +35,7 @@ const projects = [
   img:notetakerAppPic,
   githubURL: "https://github.com/dannelson714/Note-Taker",
   deployedURL: "https://serene-shore-33969.herokuapp.com/",
+  tech: "HTML | CSS | Javascript | Express.js | Insomnia | Heroku"
 },
 {
   id: 4,
@@ -70,9 +75,13 @@ export default function Projects() {
         // position: "relative",
         }}>
       </div>
-      <h2>Portfolio Page</h2>
-      <Portfolio projects = { projects } />
-      <Footer />
+      <div className="portfolioPage">
+        <br>
+        </br>
+        <h2 className="portfolioTitle">Portfolio Page</h2>
+        <Portfolio projects = { projects } />
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -16,12 +16,11 @@ export default function Portfolio(props) {
                             key={item.id}
                             style = {{
                                 border: '.01em solid black',
-                                borderRadius: ".5rem",
                                 margin: "1rem",
                                 fontSize: "1.5rem",
                                 padding: ".5rem .5rem",
-                                height: "6rem",
-                                width: "15rem",
+                                height: "9rem",
+                                width: "18rem",
                                 justifyContent: "center",
                                 color: "white",
                                 background: "rgba(0,0,0,0.4)",
@@ -34,9 +33,10 @@ export default function Portfolio(props) {
                                     <h5 className="card-title"> {item.name}</h5>
                                 </span>
                                 <span className='back-side'>
-                                    <a href={item.githubURL} className="card-text">Github Repository  |  </a>
-                                    <a href={item.deployedURL} className="card-text">Deployed App</a>
-                                    <p>Technology Used: </p>
+                                    <a href={item.githubURL} className="github">Github Repository |</a>
+                                    <a href={item.deployedURL}>  Deployed App</a>
+                                    <p className="card-text">Technology Used: </p>
+                                    <p className="tech-text">{item.tech}</p>
                                 </span>
                         </div>       
                     // </li>

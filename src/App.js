@@ -15,6 +15,8 @@ import Contact from "./pages/contact"
 import Header from "./pages/components/header";
 import Footer from "./pages/components/footer"
 import { setContext } from "@apollo/client/link/context";
+import './styles/index.css';
+
 
 // const httpLink = createHttpLink({
 //   uri: `/graphql`,

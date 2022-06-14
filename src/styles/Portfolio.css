@@ -3,7 +3,12 @@
 }
 
 p {
-    margin: 0;
+    color:aliceblue;
+    line-height: 0;
+}
+
+a {
+    color:aliceblue;
 }
 
 a:link {
@@ -45,8 +50,9 @@ a:active {
 
 .back-side {
     position: relative;
-    top: -3.5em;
-    left: 0em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     z-index: 2;
     transform: scale(0.9);
     opacity: 0;
@@ -54,6 +60,27 @@ a:active {
 }
 
 .project:hover .back-side {
-    display: inline;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     opacity: 1;
+}
+
+.project:hover .card-text{
+    margin: 10px;
+}
+
+.card-text {
+    margin: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.tech-text {
+    justify-content: center;
+    text-align: center;
+}
+
+.github {
+    margin-right: 4px;
 }
