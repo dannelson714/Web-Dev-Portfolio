@@ -43,7 +43,7 @@ const projects = [
   img: phillyPlannerPic,
   githubURL: "https://github.com/dannelson714/philly-planner",
   deployedURL: "https://sheltered-lowlands-05757.herokuapp.com/",
-  tech: "React | Apollo | GraphQL| Express | Mongoose | BCrypt | JWT"
+  tech: "React | Apollo | GraphQL | Express | Mongoose | BCrypt | JWT"
 },
 {
   id: 5,

@@ -42,7 +42,7 @@ export default function Portfolio(props) {
                                         data-mdb-ripple-color="dark">
                                         <Github />
                                     </a>
-                                    <p>    </p>
+                                    <p className="random">    </p>
                                     <a
                                     className="btn btn-link btn-floating btn-lg text-dark m-1 github"
                                     role="button"

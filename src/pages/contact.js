@@ -5,6 +5,8 @@ import emailjs from '@emailjs/browser';
 import Header from './components/header'
 import Footer from './components/footer'
 import backgroundPic from '../images/IMG_1766 6.jpeg'
+import "../styles/Contact.css"
+
 
 
 function Contact() {
@@ -90,45 +92,53 @@ function Contact() {
         // position: "relative",
         }}>
       </div>
-      <div>
-        <p>Please contact me for further information {name}</p>
-        <form ref={form} onSubmit={sendEmail} className="form" id="contactForm">
-          <input
-            value={email}
-            name="email"
-            onChange={handleInputChange}
-            onBlur={handleOnBlur}
-            type="email"
-            placeholder="email"
-          />
-          <input
-            value={name}
-            name="name"
-            onChange={handleInputChange}
-            onBlur={handleOnBlur}
-            type="text"
-            placeholder="name"
-          />
-          <textarea
-            value={message}
-            form="contactForm"
-            name="message"
-            rows="5"
-            cols="36"
-            onChange={handleInputChange}
-            onBlur={handleOnBlur}
-            placeholder="message"
-          />
-          <input type="submit" value="Send" />
-          </form>
-                
-        {errorMessage && (
-          <div>
-            <p className="error-text">{errorMessage}</p>
-          </div>
-        )}
+      <div className="contactPage">
+         <br>
+        </br>
+        <div>
+          <p className="contactTitle">Contact</p>
+          <form ref={form} onSubmit={sendEmail} className="form" id="contactForm">
+            <p className="nameName">Name *</p>
+            <input
+              value={name}
+              name="name"
+              onChange={handleInputChange}
+              onBlur={handleOnBlur}
+              type="name"
+            />
+            <p className="nameName"></p>
+            <div style={{height: "20px", width:"100%", clear:"both"}}></div>
+            <p>Email *</p>
+            <input
+              value={email}
+              name="email"
+              onChange={handleInputChange}
+              onBlur={handleOnBlur}
+              type="email"
+            />
+            <div style={{height: "20px", width:"100%", clear:"both"}}></div>
+            <p>Message *</p>
+            <textarea
+              value={message}
+              form="contactForm"
+              name="message"
+              rows="5"
+              cols="36"
+              onChange={handleInputChange}
+              onBlur={handleOnBlur}
+            />
+            <div style={{height: "20px", width:"100%", clear:"both"}}></div>
+            <input className="subBtn" type="submit" value="Send" />
+            </form>
+                  
+          {errorMessage && (
+            <div>
+              <p className="error-text">{errorMessage}</p>
+            </div>
+          )}
+        </div>
+        <div style={{height: "80px", width:"100%", clear:"both"}}></div>
       </div>
-      <div style={{height: "80px", width:"100%", clear:"both"}}></div>
       <Footer />
     </div>
   );
