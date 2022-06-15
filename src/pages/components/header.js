@@ -66,7 +66,7 @@ function Header() {
   return (
     <header className={`header ${trans ? "trans" : ""} ${active ? "active" : ""}`}>
         <nav className="navbar">
-            <a href="/home"  className="nav-logo" onClick={() => navigate("/")}>Daniel Nelson</a>
+            <a href="/"  className="nav-logo" onClick={() => navigate("/")}>Daniel Nelson</a>
             <ul className={`nav-menu ${active ? "active" : ""}`}>
                 <li className="nav-item">
                   <a href="/about" onClick={() => navigate("/about")}>

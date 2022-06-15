@@ -24,7 +24,7 @@ export default function About() {
           <div className="biography">
             <br>
             </br>
-            <h2>Biography</h2>
+            <h2 className="pageTitle">Biography</h2>
             <br>
             </br>
             <p>

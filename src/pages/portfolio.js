@@ -1,6 +1,8 @@
 import React from "react";
 import "../styles/Portfolio.css"
 
+import {Github, PlayBtn } from "react-bootstrap-icons"
+
 
 export default function Portfolio(props) {
   return (
@@ -19,7 +21,7 @@ export default function Portfolio(props) {
                                 margin: "1rem",
                                 fontSize: "1.5rem",
                                 padding: ".5rem .5rem",
-                                height: "9rem",
+                                height: "8rem",
                                 width: "18rem",
                                 justifyContent: "center",
                                 color: "white",
@@ -33,9 +35,22 @@ export default function Portfolio(props) {
                                     <h5 className="card-title"> {item.name}</h5>
                                 </span>
                                 <span className='back-side'>
-                                    <a href={item.githubURL} className="github">Github Repository |</a>
-                                    <a href={item.deployedURL}>  Deployed App</a>
-                                    <p className="card-text">Technology Used: </p>
+                                    <a 
+                                        className="btn btn-link btn-floating btn-lg text-dark m-1 github"
+                                        href={item.githubURL}
+                                        role="button"
+                                        data-mdb-ripple-color="dark">
+                                        <Github />
+                                    </a>
+                                    <p>    </p>
+                                    <a
+                                    className="btn btn-link btn-floating btn-lg text-dark m-1 github"
+                                    role="button"
+                                    data-mdb-ripple-color="dark" 
+                                    href={item.deployedURL}>  
+                                    <PlayBtn /> </a>
+                                    <br>
+                                    </br>
                                     <p className="tech-text">{item.tech}</p>
                                 </span>
                         </div>       

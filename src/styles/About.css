@@ -15,13 +15,13 @@ section {
 }
 
 .biography {
-  flex: 44%;
+  flex: 43%;
   margin-left: 10px;
   margin-right: 10px;
 }
 
 .picContainer {
-  flex: 44%;
+  flex: 43%;
   margin-left: 40px;
   margin-right: 0px;
   margin-top: 10px;
@@ -34,6 +34,11 @@ section {
 
 .buffer {
   background-color: black;
+}
+
+.pageTitle {
+  font-size: 2.1rem;
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 558px) {
